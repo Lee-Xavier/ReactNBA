@@ -8,8 +8,19 @@ import {
 } from 'react-native';
 import PropTypes from 'prop-types';
 import ajax from '../services/ajax';
-
 const styles = require('../styles.js')
+
+/**
+ * This class is a component that displays a detailed view of a player in the form of a table. 
+ * It attempts to fetch an image for the player, to be displayed along with other statistics.
+ * It uses Touchable Opacity wrapper over the view to handle a "Back" touch event and
+ * an Image component for displaying a player's headshot 
+ * 
+ * _prop   state              object        Stores properties that hold temporary states
+ * _prop   stat               array         Stores the data of a player
+ * _func   componentDidMount  function      Attempts to fetch a player's headshot image by using "[firstname]" and "[lastname]"
+ * _func   onBack             function      Handles the event of going "Back" to the previous view
+ */
 
 export default class StatDetail extends React.Component {
 
@@ -19,8 +30,7 @@ export default class StatDetail extends React.Component {
     };
     state = {
         stat: this.props.initialStatData,
-        statImage: null,
-        imageIndex: 0,
+        statImage: null,        
     };
 
     async componentDidMount() {
@@ -43,7 +53,6 @@ export default class StatDetail extends React.Component {
                 </TouchableOpacity>
 
                 <View style={styles.wrapper}>
-
                     <View>
                         {this.state.statImage && (
                             <View>

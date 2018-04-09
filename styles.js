@@ -54,15 +54,12 @@ var styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#e6e6e6',
     },
-
     aside1: {
         flex: 2,
     },
-
     aside2: {
         flex: 2,
     },
-
     asideTextLeft: {
         fontSize: 15,
         paddingLeft: 5,
@@ -79,7 +76,6 @@ var styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#0d0d0d',
     },
-
     navbar: {
         alignItems: 'center',
         backgroundColor: '#2c59a0',
